@@ -1,0 +1,22 @@
+// file for set VS Code code parser
+
+{
+  "configurations":
+  [
+    {
+      "name": "Linux",
+      "includePath": 
+      [
+        "${workspaceFolder}/code",
+        "/usr/include",
+        "/usr/local/include"
+      ]
+      // "defines": [],
+      // "compilerPath": "/usr/bin/g++",
+      // "cStandard": "c11",
+      // "cppStandard": "c++17",
+      // "intelliSenseMode": "linux-gcc-x64"
+    }
+  ],
+  "version": 4
+}
