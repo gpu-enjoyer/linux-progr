@@ -1,0 +1,29 @@
+
+// record macro 'a'
+qa
+
+// Insert
+I
+"
+
+// Escape Insertion
+<ESC>
+
+// Append
+A
+"
+
+// Escape Append
+<ESC>
+
+// Move Next Line
+j
+
+// Stop Recording
+q
+
+
+// N times apply macro 'a':
+N@a
+
+:wq
