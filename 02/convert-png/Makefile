@@ -1,4 +1,6 @@
 
+# MAKEFLAGS += -s
+
 all: clean build run
 
 clean:
