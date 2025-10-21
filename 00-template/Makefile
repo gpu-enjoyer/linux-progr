@@ -1,0 +1,3 @@
+
+all:
+	./script.sh
