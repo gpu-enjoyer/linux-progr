@@ -1,7 +1,9 @@
 #!/bin/bash
-# set -x  # for debug
 
 # [ description ]
+
+# [ for debug: ]
+# set -x
 
 source param.conf
 
