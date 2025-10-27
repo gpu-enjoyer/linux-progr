@@ -1,11 +1,13 @@
 #!/bin/bash
-# set -x  # for debug
 
 # Open the file in a suitable program
 
-source param.conf
+ORIG_DIR=$(pwd)
+THIS_DIR=$(dirname "$0")
 
-for file in "$DIR"/*;
+cd "$THIS_DIR"
+
+for file in files/*;
 do
     file_mime=$(file --mime-type -b "$file")
     case "$file_mime" in 
@@ -19,9 +21,11 @@ do
             xdg-open "$file" &
             ;;
         *)
-            echo "--------- unknown MIME: $file_mime ---------"
+            echo "=== unknown MIME: $file_mime ==="
             ;;
     esac
 done
 
-echo "$MSG done"
+cd "$ORIG_DIR"
+
+echo "open.sh done"
