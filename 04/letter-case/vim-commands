@@ -1,8 +1,0 @@
-// sudo apt install vim ...
-// vim text.txt ...
-
-V
-G
-g~
-:w
-:q
