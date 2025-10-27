@@ -2,19 +2,16 @@
 
 ### Get the weather from wttr.in by coordinates ###
 
-source param.conf
+lat=""
+long=""
 
-X=""
-Y=""
-
-while getopts "x:y:" opt
-do
-    case "$opt" in
-        x) 
-            X="$OPTARG"
+while getopts x:y: args; do
+    case $args in
+        x)
+            lat=$OPTARG
             ;;
         y)
-            Y="$OPTARG"
+            long=$OPTARG
             ;;
         *) 
             echo "USAGE: $0 -x \"..\" -y \"..\""
@@ -23,4 +20,4 @@ do
     esac
 done
 
-curl "https://wttr.in/$X,$Y"
+curl "https://wttr.in/$lat,$long"
