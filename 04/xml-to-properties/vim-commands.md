@@ -1,5 +1,5 @@
 
-## What was I created for?
+## Ad quid creatus sum
 
 ```
 qa
