@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git init
-git add -A
+git add "hello.txt"
 git commit -m "init"
 git branch -M main
 git remote add origin git@github.com:gpu-enjoyer/test.git
