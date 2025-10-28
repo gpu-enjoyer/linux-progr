@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git checkout -b new-branch
+git checkout -b in-progress
 git add "file.txt"
-git commit -m "new-branch"
-git push -u origin new-branch
+git commit -m "in-progress"
+git push -u origin in-progress
 
