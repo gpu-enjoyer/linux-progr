@@ -29,6 +29,25 @@ public:
         check(f != nullptr, "fopen");
     }
 
+    File(const File&) = delete;             // copy prohibition
+    File& operator=(const File&) = delete; 
+
+    File(File&& other) : f(other.f)
+    {
+        other.f = nullptr;
+    }
+
+    File& operator=(File&& other)
+    {
+        if (this != &other)
+        {
+            if (f) fclose(f);   // close old f
+            f = other.f;        // get pointer
+            other.f = nullptr;  // null source
+        }
+        return *this;
+    }
+
     ~File()
     {
         if (f) check(fclose(f) == 0, "fclose");
@@ -54,21 +73,23 @@ public:
 
     void rewind_file()
     {
-        rewind(f);  // go to the file begin
+        rewind(f);  // go to the file' begin
     }
 };
 
 int main()
 {
-    File f("test.txt", "w+");  // write + read
+    File f1("test.txt", "w+");  // write + read
 
     const char msg[] = "hello\n";
-    f.write(msg, 1, sizeof(msg)-1);
 
-    f.rewind_file();
+    f1.write(msg, 1, sizeof(msg)-1);
+    f1.rewind_file();
+
+    File f2 = std::move(f1);
 
     char buf[16] = {};
-    f.read(buf, 1, sizeof(msg)-1);
+    f2.read(buf, 1, sizeof(msg)-1);
     std::cout << buf;
 
     return 0;

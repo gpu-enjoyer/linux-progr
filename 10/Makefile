@@ -1,6 +1,11 @@
 MAKEFLAGS += -s
 
-all: build run
+all: build run check
+
+install:
+	sudo apt install valgrind
+# valgrind
+#   - a suite of tools for debugging and profiling programs
 
 build:
 	rm -rf .build
@@ -9,3 +14,7 @@ build:
 
 run:
 	./.build/file
+
+check:
+	valgrind --track-fds=yes ./.build/file
+# check: is file-descriptor ok
